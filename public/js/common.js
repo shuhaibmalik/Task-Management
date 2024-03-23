@@ -1,25 +1,14 @@
-var pageUrl = window.location.href.split('/');
-$(document).on('change' , '#taskStatus', ()=> {
-    var task_id =$(this).find("option:selected").attr("hidden-attr");
-    var status = $('#taskStatus');
-    $.ajax({
-        url:pageUrl[0]+pageUrl[1]+pageUrl[2]+'/update_status',
-        type: "PUT",
-        data: {
-            status : status
-        },
-        success: function (data) {
-            window.location.reload();
-        }
-    })
-})
+
 function statusChange(id){
-    var status = $('#taskStatus');
+    var task_id = id;
+    var status = $('#taskStatus').val();
     $.ajax({
-        url:pageUrl[0]+pageUrl[1]+pageUrl[2]+'/update_status',
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url:'/update_status',
         type: "PUT",
         data: {
-            status : status
+            status : status,
+            task_id : task_id
         },
         success: function (data) {
             window.location.reload();

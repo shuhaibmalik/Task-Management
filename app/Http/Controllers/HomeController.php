@@ -27,7 +27,7 @@ class HomeController extends Controller
         return back();
     }
 
-    public function VieTask() {
+    public function viewTask() {
         
         if(auth()->user()->role == 'staff'){
             $user_id = auth()->user()->id;
@@ -39,13 +39,13 @@ class HomeController extends Controller
         return view('task',compact('tasks'));
     }
 
-    public function AddTask() {
+    public function addTask() {
 
         $users = User::where('role','staff')->get();
         return view('add_task',compact('users'));
     }
 
-    public function CreateTask(Request $request) {
+    public function createTask(Request $request) {
 
         $task = (string) $request->task;
         $user_id = (int) $request->user;
@@ -62,7 +62,7 @@ class HomeController extends Controller
 
         $id = $request->id;
         $status = $request->status;
-        $update = Tast::where('id',$id)->update([
+        $update = Task::where('id',$id)->update([
             'status' => $status
         ]);
 

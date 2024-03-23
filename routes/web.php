@@ -18,8 +18,8 @@ use App\Http\Controllers\HomeController;
 // });
 Route::get('/', [HomeController::class,'index']);
 Route::post('/login', [HomeController::class, 'login'])->name('login');
-Route::get('/task', [HomeController::class,'VieTask'])->name('task');
-Route::get('/add_task', [HomeController::class, 'AddTask'])->name('add_task');
-Route::post('/create_task', [HomeController::class, 'CreateTask'])->name('create_task');
+Route::get('/task', [HomeController::class,'viewTask'])->name('task');
+Route::get('/add_task', [HomeController::class, 'addTask'])->name('add_task');
+Route::post('/create_task', [HomeController::class, 'createTask'])->name('create_task');
 Route::put('/update_status', [HomeController::class, 'statusUpdate']);
 

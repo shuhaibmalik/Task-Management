@@ -4,13 +4,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <meta name="csrf-token" content="{{csrf_token()}}">
+    <title>Task Management</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
    
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   </head>
   <body>
       <div class="container-fluid page-body-wrapper">

@@ -21,10 +21,10 @@
       <td>{{$task->name}}</td>
       @endcan
       <td>
-        <select id="taskStatus" class="form-control">
-            <option value="0" {{$task->status == 0 ? 'selected' : ""}} hidden-attr = {{$task->id}}>Not Completed</option>
-            <option value="1" {{$task->status == 1 ? 'selected' : ""}} hidden-attr = {{$task->id}}>Completed</option>
-            <option value="3" {{$task->status == 2 ? 'selected' : ""}} hidden-attr = {{$task->id}}>Process</option>
+        <select id="taskStatus" class="form-control" onChange=statusChange(1)>
+            <option value="0" {{$task->status == 0 ? 'selected' : ""}} tast_id="{{$task->id}}">Not Completed</option>
+            <option value="1" {{$task->status == 1 ? 'selected' : ""}} tast_id = "{{$task->id}}">Completed</option>
+            <option value="3" {{$task->status == 2 ? 'selected' : ""}} tast_id = "{{$task->id}}">Process</option>
         </select>
       </td>
     </tr>
